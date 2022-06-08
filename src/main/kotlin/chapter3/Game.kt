@@ -4,6 +4,14 @@ fun main(args: Array<String>) {
     val name = "Madrigal"
     var healthPoint = 89
     val isBlessed = true
+    val isImmortal = false
+
+    //Aura
+    if (isBlessed && healthPoint > 50 || isImmortal) {
+        println("GREEN")
+    } else {
+        println("None")
+    }
 
     if (healthPoint == 100) {
         println(name + " is in excellent condition!")
