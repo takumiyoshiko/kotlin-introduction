@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b0571a7a-2ac5-4671-b976-640ee5fbc2a1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter4/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter4/Game.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/takumiyoshiko/Project/hobby/kotlin/kotlin-introduction/src/main/kotlin/chapter4"
+    "last_opened_file_path": "/Users/takumiyoshiko/Project/hobby/kotlin/kotlin-introduction/src/main/kotlin/chapter4",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -52,7 +54,7 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/chapter3" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.ConditionalsChallengesKt">
+  <component name="RunManager" selected="Kotlin.GameKt (2)">
     <configuration name="ConditionalsChallengesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chapter3.ConditionalsChallengesKt" />
       <module name="kotlin-introduction.main" />
@@ -67,15 +69,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chapter2.GameKt" />
+    <configuration name="GameKt (2)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chapter4.GameKt" />
       <module name="kotlin-introduction.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HelloKt" />
+    <configuration name="GameKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chapter2.GameKt" />
       <module name="kotlin-introduction.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,11 +92,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.GameKt (2)" />
         <item itemvalue="Kotlin.ConditionalsChallengesKt" />
         <item itemvalue="Kotlin.GameKt (1)" />
         <item itemvalue="Kotlin.GameKt" />
         <item itemvalue="Kotlin.TypeIntroKt" />
-        <item itemvalue="Kotlin.HelloKt" />
       </list>
     </recent_temporary>
   </component>
