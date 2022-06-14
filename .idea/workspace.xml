@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b0571a7a-2ac5-4671-b976-640ee5fbc2a1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/chapter5/SimVillage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/chapter5/SimVillage.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,21 +40,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/takumiyoshiko/Project/hobby/kotlin/kotlin-introduction/src/main/kotlin/chapter4",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/takumiyoshiko/Project/hobby/kotlin/kotlin-introduction/src/main/kotlin/chapter4&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/kotlin/chapter4" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/chapter3" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.GameKt (2)">
+  <component name="RunManager" selected="Kotlin.SimVillageKt">
     <configuration name="ConditionalsChallengesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chapter3.ConditionalsChallengesKt" />
       <module name="kotlin-introduction.main" />
@@ -82,8 +83,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TypeIntroKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="chapter2.TypeIntroKt" />
+    <configuration name="SimVillageKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="chapter5.SimVillageKt" />
       <module name="kotlin-introduction.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,11 +92,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.SimVillageKt" />
         <item itemvalue="Kotlin.GameKt (2)" />
         <item itemvalue="Kotlin.ConditionalsChallengesKt" />
         <item itemvalue="Kotlin.GameKt (1)" />
         <item itemvalue="Kotlin.GameKt" />
-        <item itemvalue="Kotlin.TypeIntroKt" />
       </list>
     </recent_temporary>
   </component>

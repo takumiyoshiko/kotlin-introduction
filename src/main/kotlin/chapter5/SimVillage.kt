@@ -1,8 +1,10 @@
 package chapter5
 
 fun main(args: Array<String>) {
-    println({
+    val greetingFunction: (String) -> String = { playerName ->
         val currentYear = 2018
-        "Welcome to SimVillage, Mayor! (copyright $currentYear)"
-    }())
+        "Welcome to SimVillage, $playerName! (copyright $currentYear)"
+    }
+
+    println(greetingFunction("Guyal"))
 }
