@@ -1,22 +1,21 @@
 package chapter5
 
 fun main(args: Array<String>) {
-    runSimulation("Guyal", ::printConstructionCost) { playerName, numBuildings ->
+    runSimulation()
+}
+
+inline fun runSimulation() {
+    val greetingFunction = configurationGreetingFunction()
+    println(greetingFunction("Guyal"))
+}
+
+fun configurationGreetingFunction(): (String) -> String {
+    val structureType = "hospitals"
+    var numBuildings = 5
+    return { playerName: String ->
         val currentYear = 2018
-        println("Adding $numBuildings")
-        "Welcome to SimVillage, $playerName! (copyright $currentYear)"
+        numBuildings += 1
+        println("Adding $numBuildings $structureType")
+        "Welcome to SimVillage, $playerName! (copylight $currentYear)"
     }
-}
-
-inline fun runSimulation(playerName: String,
-                         costPrinter: (Int) -> Unit,
-                         greetingFunction: (String, Int) -> String) {
-    val numBuildings = (1..3).shuffled().last()
-    costPrinter(numBuildings)
-    println(greetingFunction(playerName, numBuildings))
-}
-
-fun printConstructionCost(numBuildings: Int) {
-    val cost = 500
-    println("construction cost: ${cost * numBuildings}")
 }
