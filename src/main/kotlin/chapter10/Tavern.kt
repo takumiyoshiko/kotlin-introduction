@@ -26,12 +26,9 @@ fun main(args: Array<String>) {
     }
     placeOrder("shandy,Dragon's Breath,5.91")
 
-    println(patronList)
-    patronList.remove("Eli")
-    patronList.add("Alex")
-    patronList.add(0, "Alex")
-    patronList[0] = "Alexis"
-    println(patronList)
+    patronList.forEachIndexed { index, patron ->
+        println("Good evening, $patron - you're #${index + 1} in line.")
+    }
 }
 
 fun performPurchase(price: Double): Boolean {
