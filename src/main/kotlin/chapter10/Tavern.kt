@@ -2,6 +2,7 @@ package chapter10
 
 import chapter8.dragoncoin
 import kotlin.math.roundToInt
+import java.io.File
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -9,6 +10,7 @@ var playerGold = 10
 var playerSilver = 10
 
 val patronList = mutableListOf("Eli", "Mordoc", "Sophie")
+val menuList = File("data/tavern-menu-data.txt").readText().split("\n")
 
 
 
@@ -24,10 +26,15 @@ fun main(args: Array<String>) {
     } else {
         println("The tavern master says: Nay, they departed hours ago.")
     }
-    placeOrder("shandy,Dragon's Breath,5.91")
+
 
     patronList.forEachIndexed { index, patron ->
         println("Good evening, $patron - you're #${index + 1} in line.")
+        placeOrder(patron, menuList.shuffled().first())
+    }
+
+    menuList.forEachIndexed {index, data ->
+        println("$index : $data")
     }
 }
 
@@ -54,25 +61,25 @@ private fun displayBalance() {
     println("Player's purse balance: Gold: $playerGold, Silver: $playerSilver")
 }
 
-private fun placeOrder(menuData: String) {
+private fun placeOrder(patronName: String, menuData: String) {
     val indexOfApostrophe = TAVERN_NAME.indexOf('\'')
     val tavernMaster = TAVERN_NAME.substring(0 until indexOfApostrophe)
-    println("Madrigal speaks with $tavernMaster about their order")
+    println("$patronName speaks with $tavernMaster about their order")
 
     val (type, name, price) = menuData.split(',')
-    val message = "Madrigal buys a $name ($type) for $price"
+    val message = "$patronName buys a $name ($type) for $price"
     println(message)
 
-    val canPurchase = performPurchase(price.toDouble())
-
-    if (canPurchase) {
-        val phrase = if (name == "Dragon's Breath") {
-            "Madrigal exclaims ${toDragonSpeak("DRAGON'S BREATH: IT`SGOTWHATADVENTURES CRAVE")}"
-        } else {
-            "Madrigal says: Thanks for the $name"
-        }
-        println(phrase)
-    }
+//    val canPurchase = performPurchase(price.toDouble())
+//
+//    if (canPurchase) {
+//        val phrase = if (name == "Dragon's Breath") {
+//            "$patronName exclaims ${toDragonSpeak("DRAGON'S BREATH: IT`SGOTWHATADVENTURES CRAVE")}"
+//        } else {
+//            "$patronName says: Thanks for the $name"
+//        }
+//        println(phrase)
+//    }
 }
 
 private fun toDragonSpeak(phrase: String) =
