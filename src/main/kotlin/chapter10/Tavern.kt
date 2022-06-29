@@ -29,6 +29,40 @@ fun main(args: Array<String>) {
         println("The tavern master says: Nay, they departed hours ago.")
     }
 
+    //Challenge 10.11
+    var formattedMenuList1 = "*** Welcome to Taernyl's Folly ***\n"
+
+    menuList.forEach {
+        val (type, name,price) = it.split(",")
+        val wordList = name.split(" ")
+        var formattedName: String = ""
+        wordList.forEach {
+            formattedName += it.capitalize() + " "
+        }
+        formattedMenuList1 += formattedName + "*".repeat(21 - formattedName.length) + "%10s".format(price).replace(" ", "*") + "\n"
+    }
+    println(formattedMenuList1)
+
+    //Challenge 10.12
+    var formattedMenuList2 = "*** Welcome to Taernyl's Folly ***\n"
+
+    var beforeType: String = ""
+    menuList.sorted().forEach {
+        val (type, name,price) = it.split(",")
+        if (beforeType != type) {
+            var spaceNum = ((31 - 4 - type.length) / 2).toInt()
+            formattedMenuList2 += " ".repeat(spaceNum) + "~[$type]~\n"
+        }
+        beforeType = type
+        val wordList = name.split(" ")
+        var formattedName: String = ""
+        wordList.forEach {
+            formattedName += it.capitalize() + " "
+        }
+        formattedMenuList2 += formattedName + "*".repeat(21 - formattedName.length) + "%10s".format(price).replace(" ", "*") + "\n"
+    }
+    println(formattedMenuList2)
+
 
     (0..9).forEach {
         val first = patronList.shuffled().first()
