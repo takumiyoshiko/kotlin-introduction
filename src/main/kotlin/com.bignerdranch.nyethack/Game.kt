@@ -1,9 +1,14 @@
+import com.bignerdranch.nyethack.Room
 
 fun main(args: Array<String>) {
 
-    val player = Player(name = "kar")
+    val player = Player(name = "Madrigal")
     player.healthPoints = 100
     player.castFireball()
+
+    var currentRoom = Room("Foyer")
+    println(currentRoom.description())
+    println(currentRoom.load())
 
     //Aura
     val auraColor = player.auraColor()
