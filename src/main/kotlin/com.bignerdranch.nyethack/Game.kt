@@ -1,4 +1,5 @@
 import com.bignerdranch.nyethack.Room
+import com.bignerdranch.nyethack.TownSquare
 
 fun main(args: Array<String>) {
 
@@ -6,7 +7,7 @@ fun main(args: Array<String>) {
     player.healthPoints = 100
     player.castFireball()
 
-    var currentRoom = Room("Foyer")
+    var currentRoom: Room = TownSquare()
     println(currentRoom.description())
     println(currentRoom.load())
 
@@ -18,6 +19,19 @@ fun main(args: Array<String>) {
 
     printPlayerStatus(player)
 
+    var room = Room("Foyer")
+    println(room is Room)
+    println(room is TownSquare)
+
+    var townSquare = TownSquare()
+    println(townSquare is TownSquare)
+    println(townSquare is Room)
+
+    var className = when(townSquare) {
+        is Room -> "Room"
+        else -> throw java.lang.IllegalArgumentException()
+    }
+    println(className)
 }
 
 private fun printPlayerStatus(
