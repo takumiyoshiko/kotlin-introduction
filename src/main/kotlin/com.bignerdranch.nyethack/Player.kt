@@ -1,3 +1,4 @@
+import com.bignerdranch.nyethack.Coordinate
 import java.io.File
 
 class Player(_name: String,
@@ -10,7 +11,9 @@ class Player(_name: String,
             field = value.trim()
         }
 
-    val homeTown = selectHometown()
+    val homeTown by lazy { selectHometown() }
+    val currentPosition = Coordinate(0, 0)
+
 
     private fun selectHometown() = File("data/towns.txt")
         .readText()
