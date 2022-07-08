@@ -1,10 +1,24 @@
 import com.bignerdranch.nyethack.Coordinate
+import com.bignerdranch.nyethack.Fightable
 import java.io.File
 
 class Player(_name: String,
-             var healthPoints: Int = 100,
+             override var healthPoints: Int = 100,
              val isBlessed: Boolean,
-             private val isImmortal: Boolean) {
+             private val isImmortal: Boolean): Fightable {
+
+    override val diceCount = 3
+    override val diceSlides = 6
+    override fun attack(opponent: Fightable): Int {
+        val damageDealt = if (isBlessed) {
+            damageRoll * 2
+        } else {
+            damageRoll
+        }
+        opponent.healthPoints -= damageDealt
+        return damageDealt
+    }
+
     var name = _name
         get() = "${field.capitalize()} of $homeTown"
         private set(value) {
@@ -54,4 +68,6 @@ class Player(_name: String,
         val auraColor = if (auraVisible) "GREEN" else "NONE"
         return auraColor
     }
+
+
 }
