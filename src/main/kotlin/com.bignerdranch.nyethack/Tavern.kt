@@ -1,5 +1,6 @@
 import kotlin.math.roundToInt
 import java.io.File
+import com.bignerdranch.nyethack.extensions.random
 
 const val TAVERN_NAME = "Taernyl's Folly"
 
@@ -62,8 +63,8 @@ fun main(args: Array<String>) {
 
 
     (0..9).forEach {
-        val first = patronList.shuffled().first()
-        val last = lastName.shuffled().first()
+        val first = patronList.random()
+        val last = lastName.random()
         val name = "$first $last"
         uniquePatrons += name
     }
@@ -75,7 +76,7 @@ fun main(args: Array<String>) {
 
     var orderCount = 0
     while (orderCount <= 9) {
-        placeOrder(uniquePatrons.shuffled().first(), menuList.shuffled().first())
+        placeOrder(uniquePatrons.random(), menuList.random())
         orderCount++
     }
 
@@ -121,7 +122,7 @@ private fun placeOrder(patronName: String, menuData: String) {
     performPurchase(price.toDouble(), patronName)
 
     val phrase = if (name == "Dragon's Breath") {
-        "$patronName exclaims ${toDragonSpeak("DRAGON'S BREATH: IT`SGOTWHATADVENTURES CRAVE")}"
+        "$patronName exclaims ${"DRAGON'S BREATH: IT`SGOTWHATADVENTURES CRAVE".toDragonSpeak()}"
     } else {
         "$patronName says: Thanks for the $name"
     }
@@ -129,8 +130,7 @@ private fun placeOrder(patronName: String, menuData: String) {
 
 }
 
-private fun toDragonSpeak(phrase: String) =
-    phrase.replace(Regex("[aeiouAEIOU]")) {
+private fun String.toDragonSpeak(): String = this.replace(Regex("[aeiouAEIOU]")) {
         when (it.value) {
             "a", "A" -> "4"
             "e", "E" -> "3"
@@ -140,3 +140,15 @@ private fun toDragonSpeak(phrase: String) =
             else -> it.value
         }
     }
+
+//private fun toDragonSpeak(phrase: String) =
+//    phrase.replace(Regex("[aeiouAEIOU]")) {
+//        when (it.value) {
+//            "a", "A" -> "4"
+//            "e", "E" -> "3"
+//            "i", "I" -> "1"
+//            "o", "O" -> "0"
+//            "u", "U" -> "|_|"
+//            else -> it.value
+//        }
+//    }
