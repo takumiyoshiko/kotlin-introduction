@@ -1,5 +1,7 @@
 package chapter19
 
+import chapter18.easyPrint
+
 fun main() {
     val animals = listOf("zebra", "giraffe", "elephant", "rat")
     val babies = animals
@@ -64,5 +66,18 @@ fun main() {
 
     val gradesByStudent = mapOf("Josh" to 4.0, "Alex" to 2.0)
     println(flipValues(gradesByStudent))
+
+    //challenge 19.8
+    val valuesToAdd = listOf(1, 18, 73, 3, 44, 6, 1, 33, 2, 22, 5, 7)
+
+    valuesToAdd.easyPrint()
+        .filter { it >= 5 }
+        .easyPrint()
+        .windowed(size = 2, step = 2).map {it[0] * it[1]}
+        .easyPrint()
+        .sum()
+        .easyPrint()
+
+
 
 }
