@@ -1,4 +1,5 @@
-import kotlin.math.roundToInt
+
+
 import java.io.File
 import com.bignerdranch.nyethack.extensions.random
 
@@ -9,7 +10,6 @@ var playerSilver = 10
 
 val patronList = mutableListOf("Eli", "Mordoc", "Sophie")
 val lastName = listOf("Ironfoot", "Fernsworth", "Baggins")
-val uniquePatrons = mutableSetOf<String>()
 val menuList = File("data/tavern-menu-data.txt").readText().split("\n")
 val patronGold = mutableMapOf<String, Double>()
 
@@ -62,12 +62,14 @@ fun main(args: Array<String>) {
     println(formattedMenuList2)
 
 
-    (0..9).forEach {
+    val uniquePatrons: Set<String> = generateSequence {
         val first = patronList.random()
         val last = lastName.random()
-        val name = "$first $last"
-        uniquePatrons += name
-    }
+        "$first $last"
+    }.distinct().take(9).toSet()
+
+
+    println("uniquePatron size: ${uniquePatrons.size}")
     println(uniquePatrons)
 
     uniquePatrons.forEach {
@@ -95,10 +97,10 @@ fun displayPatronBalances() {
             println("$patron, balance: ${"%.2f".format(balance)}")
         }
     }
-    debtorList.forEach {patron ->
-        patronGold.remove(patron)
-        uniquePatrons.remove(patron)
-    }
+//    debtorList.forEach {patron ->
+//        patronGold.remove(patron)
+//        uniquePatrons.remove(patron)
+//    }
 }
 
 fun performPurchase(price: Double, patronName: String){
